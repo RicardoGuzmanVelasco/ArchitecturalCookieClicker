@@ -1,0 +1,18 @@
+﻿@startuml
+skin rose
+skinparam componentstyle uml1
+
+component Cookies{
+    component Domain
+    component Application
+    component Infrastructure
+}
+
+component UnityEngine #lightgray
+
+Infrastructure --> Application
+Application --> Domain
+Infrastructure --> UnityEngine
+
+
+@enduml
