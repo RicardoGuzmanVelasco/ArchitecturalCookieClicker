@@ -1,7 +1,7 @@
 {
     "name": "Cookies.Application",
     "rootNamespace": "",
-    "references": [],
+    "references": ["GUID:58711a339ddc6bd499d011f0e35403b4"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
