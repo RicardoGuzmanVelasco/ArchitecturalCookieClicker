@@ -1,7 +1,9 @@
 {
     "name": "Cookies.Infrastucture",
     "rootNamespace": "",
-    "references": ["Cookies.Application"],
+    "references": [
+        ""
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
