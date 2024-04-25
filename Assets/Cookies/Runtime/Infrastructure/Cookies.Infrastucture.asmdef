@@ -2,7 +2,7 @@
     "name": "Cookies.Infrastucture",
     "rootNamespace": "",
     "references": [
-        ""
+        "Cookies.Application"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
