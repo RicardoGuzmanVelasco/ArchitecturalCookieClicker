@@ -17,7 +17,7 @@ namespace Cookies.Runtime.Application
         public void Run()
         {
             domain.Add(CookiesPerTime);
-            counter.Print(CookiesPerTime);
+            counter.Print(domain.Cookies);
         }
     }
 }
