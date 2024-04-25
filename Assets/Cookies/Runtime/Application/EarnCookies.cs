@@ -1,4 +1,5 @@
-﻿namespace Cookies.Runtime.Application
+﻿using System;
+namespace Cookies.Runtime.Application
 {
     public class EarnCookies
     {
@@ -8,6 +9,8 @@
         
         public EarnCookies(CookieCounter counter)
         {
+            if (counter == null) throw new ArgumentNullException(nameof(counter));
+
             this.counter = counter;
         }
 

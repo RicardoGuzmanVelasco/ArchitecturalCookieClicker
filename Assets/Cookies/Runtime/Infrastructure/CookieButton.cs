@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class CookieButton : MonoBehaviour
 {
-    readonly EarnCookies earnCookies = new EarnCookies();
+    readonly EarnCookies earnCookies = new EarnCookies(null);
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(CallController);
@@ -14,5 +14,4 @@ public class CookieButton : MonoBehaviour
     {
         earnCookies.Run();
     }
-
 }
