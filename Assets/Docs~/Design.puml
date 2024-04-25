@@ -1,0 +1,13 @@
+﻿@startuml
+skin rose
+
+boundary CookieButton
+boundary CookieCounter
+control EarnCookies
+entity CookieBox
+
+CookieButton --> EarnCookies
+EarnCookies --> CookieBox
+EarnCookies --> CookieCounter
+
+@enduml
