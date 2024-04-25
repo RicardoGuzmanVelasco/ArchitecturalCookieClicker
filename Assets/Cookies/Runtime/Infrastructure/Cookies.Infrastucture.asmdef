@@ -2,7 +2,8 @@
     "name": "Cookies.Infrastucture",
     "rootNamespace": "",
     "references": [
-        "Cookies.Application"
+        "Cookies.Application",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,10 +1,15 @@
 using Cookies.Runtime.Application;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-public class CookieButton : MonoBehaviour
+public class CookieButton : MonoBehaviour, CookieCounter
 {
-    readonly EarnCookies earnCookies = new EarnCookies(null);
+    EarnCookies earnCookies;
+    void Awake()
+    {
+        earnCookies = new EarnCookies(this);
+    }
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(CallController);
@@ -13,5 +18,10 @@ public class CookieButton : MonoBehaviour
     private void CallController() 
     {
         earnCookies.Run();
+    }
+
+    public void Print(int howMany)
+    {
+        GetComponentInChildren<TMP_Text>().text = howMany.ToString();
     }
 }
