@@ -9,7 +9,15 @@ public class CookieBox
         if (cookiesToAdd <= 0) throw new ArgumentOutOfRangeException(nameof(cookiesToAdd));
 
         Cookies += cookiesToAdd;
-        if (Cookies == cookiesBefore) throw new ArgumentException("no se han añadido las galletas");
+        if (Cookies == cookiesBefore) throw new ArgumentException("no se han aÃ±adido las galletas");
     }
 
+    public void Subtract(int cookiesToSubtract)
+    {
+        var cookiesBefore = Cookies;
+        if (cookiesToSubtract <= 0) throw new ArgumentOutOfRangeException(nameof(cookiesToSubtract));
+
+        Cookies -= cookiesToSubtract;
+        if (Cookies == cookiesBefore) throw new ArgumentException("no se han restado las galletas");
+    }
 }
