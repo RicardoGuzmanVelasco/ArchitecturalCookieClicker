@@ -3,7 +3,6 @@ namespace Cookies.Runtime.Application
 {
     public class EarnCookies
     {
-        const int CookiesPerTime = 1;
         readonly CookieBox domain = new CookieBox();
         readonly CookieCounter counter;
         
@@ -16,7 +15,7 @@ namespace Cookies.Runtime.Application
 
         public void Run()
         {
-            domain.Add(CookiesPerTime);
+            domain.Add(domain.CookiesPerTime);
             counter.Print(domain.Cookies);
         }
     }

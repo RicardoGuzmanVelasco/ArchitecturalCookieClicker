@@ -1,6 +1,7 @@
 using System;
 public class CookieBox
 {
+    public int CookiesPerTime { get; private set; } = 1;
     public int Cookies { get; private set; }
 
     public void Add(int cookiesToAdd)
