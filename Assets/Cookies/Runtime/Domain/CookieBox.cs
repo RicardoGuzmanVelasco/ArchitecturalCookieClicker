@@ -15,6 +15,7 @@ public class CookieBox
 
     public void Subtract(int cookiesToSubtract)
     {
+        if (Cookies < cookiesToSubtract) throw new InvalidOperationException("No te puedes endeudar de galletas");
         var cookiesBefore = Cookies;
         if (cookiesToSubtract <= 0) throw new ArgumentOutOfRangeException(nameof(cookiesToSubtract));
 
