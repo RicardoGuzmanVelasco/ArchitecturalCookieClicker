@@ -5,11 +5,8 @@ using TMPro;
 
 public class CookieButton : MonoBehaviour, CookieCounter
 {
-    EarnCookies earnCookies;
-    void Awake()
-    {
-        earnCookies = new EarnCookies(this);
-    }
+    EarnCookies controller;
+
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(CallController);
@@ -17,11 +14,16 @@ public class CookieButton : MonoBehaviour, CookieCounter
 
     private void CallController() 
     {
-        earnCookies.Run();
+        controller.Run();
     }
 
     public void Print(int howMany)
     {
         GetComponentInChildren<TMP_Text>().text = howMany.ToString();
+    }
+
+    public void Inject(EarnCookies _controller)
+    {
+        controller = _controller;
     }
 }

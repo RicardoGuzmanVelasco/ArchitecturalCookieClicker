@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "Cookies.Application",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Cookies.Domain"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

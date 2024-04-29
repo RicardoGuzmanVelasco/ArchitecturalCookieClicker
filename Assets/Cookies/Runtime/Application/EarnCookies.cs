@@ -6,11 +6,10 @@ namespace Cookies.Runtime.Application
         readonly CookieBox domain = new CookieBox();
         readonly CookieCounter counter;
         
-        public EarnCookies(CookieCounter counter)
+        public EarnCookies(CookieBox domain, CookieCounter counter)
         {
-            if (counter == null) throw new ArgumentNullException(nameof(counter));
-
-            this.counter = counter;
+            this.domain = domain ?? throw new ArgumentNullException(nameof(domain));
+            this.counter = counter ?? throw new ArgumentNullException(nameof(counter));
         }
 
         public void Run()
