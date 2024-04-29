@@ -11,6 +11,6 @@ public class Main : MonoBehaviour
         EarnCookies earnCookies = new EarnCookies(cookieBox, counter);
         PurchasePowerup purchasePowerup = new PurchasePowerup(cookieBox, counter, multiplier);
         FindAnyObjectByType<CookieButton>().Inject(earnCookies);
-        FindAnyObjectByType<PurchasePowerupButton>().Inject(purchasePowerup);
+        FindAnyObjectByType<PurchasePowerupButton>().Inject(purchasePowerup, cookieBox);
     }
 }

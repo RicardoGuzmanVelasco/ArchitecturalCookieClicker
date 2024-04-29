@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PurchasePowerupButton : MonoBehaviour, CookieMultiplier
 {
+    CookieBox domain;
     PurchasePowerup controller;
     string initialTextString;
     private void Awake()
@@ -15,6 +16,7 @@ public class PurchasePowerupButton : MonoBehaviour, CookieMultiplier
     private void Start()
     {
         GetComponent<Button>().onClick.AddListener(CallController);
+        Print(domain.CookiesPerTime);
     }
 
     private void CallController()
@@ -22,9 +24,10 @@ public class PurchasePowerupButton : MonoBehaviour, CookieMultiplier
         controller.Run();
     }
 
-    public void Inject(PurchasePowerup _controller)
+    public void Inject(PurchasePowerup _controller, CookieBox _domain)
     {
         controller = _controller;
+        domain = _domain;
     }
 
     public void Print(int howMuch)
