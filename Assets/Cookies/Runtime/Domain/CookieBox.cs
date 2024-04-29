@@ -27,4 +27,9 @@ public class CookieBox
     {
         CookiesPerTime *= 2;
     }
+
+    public bool IsAffordable(int _howMany)
+    {
+        return Cookies >= _howMany;
+    }
 }
