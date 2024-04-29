@@ -7,8 +7,9 @@ public class Main : MonoBehaviour
     {
         CookieBox cookieBox = new CookieBox();
         CookieButton counter = FindFirstObjectByType<CookieButton>();
+        CookieMultiplier multiplier = FindFirstObjectByType<PurchasePowerupButton>();
         EarnCookies earnCookies = new EarnCookies(cookieBox, counter);
-        PurchasePowerup purchasePowerup = new PurchasePowerup(cookieBox, counter);
+        PurchasePowerup purchasePowerup = new PurchasePowerup(cookieBox, counter, multiplier);
         FindAnyObjectByType<CookieButton>().Inject(earnCookies);
         FindAnyObjectByType<PurchasePowerupButton>().Inject(purchasePowerup);
     }

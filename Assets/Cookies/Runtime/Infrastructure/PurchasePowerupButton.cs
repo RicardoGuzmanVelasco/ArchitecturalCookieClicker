@@ -1,10 +1,16 @@
 using Cookies.Runtime.Application;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PurchasePowerupButton : MonoBehaviour
+public class PurchasePowerupButton : MonoBehaviour, CookieMultiplier
 {
     PurchasePowerup controller;
+    string initialTextString;
+    private void Awake()
+    {
+        initialTextString = GetComponentInChildren<TMP_Text>().text;
+    }
 
     private void Start()
     {
@@ -19,5 +25,10 @@ public class PurchasePowerupButton : MonoBehaviour
     public void Inject(PurchasePowerup _controller)
     {
         controller = _controller;
+    }
+
+    public void Print(int howMuch)
+    {
+        GetComponentInChildren<TMP_Text>().text = initialTextString + "(+ " + howMuch.ToString() + ")";
     }
 }

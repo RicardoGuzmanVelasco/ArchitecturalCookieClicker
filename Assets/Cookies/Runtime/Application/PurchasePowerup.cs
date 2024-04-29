@@ -8,11 +8,13 @@ namespace Cookies.Runtime.Application
         
         readonly CookieBox domain;
         readonly CookieCounter counter;
+        readonly CookieMultiplier multiplier;
 
-        public PurchasePowerup(CookieBox domain, CookieCounter counter)
+        public PurchasePowerup(CookieBox domain, CookieCounter counter, CookieMultiplier multiplier)
         {
             this.domain = domain ?? throw new ArgumentNullException(nameof(domain));
             this.counter = counter ?? throw new ArgumentNullException(nameof(counter));
+            this.multiplier = multiplier ?? throw new ArgumentNullException(nameof(multiplier));
         }
 
         public void Run()
@@ -21,6 +23,7 @@ namespace Cookies.Runtime.Application
             domain.Subtract(PowerupPrice);
             counter.Print(domain.Cookies);
             domain.DoubleMultiplicator();
+            multiplier.Print(domain.CookiesPerTime);
         }
     }
 }
