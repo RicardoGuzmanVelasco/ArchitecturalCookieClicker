@@ -17,6 +17,7 @@ namespace Cookies.Runtime.Application
 
         public void Run()
         {
+            if (domain.Cookies < PowerupPrice) return;
             domain.Subtract(PowerupPrice);
             counter.Print(domain.Cookies);
             domain.DoubleMultiplicator();
