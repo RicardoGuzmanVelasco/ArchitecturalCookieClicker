@@ -19,6 +19,7 @@ namespace Cookies.Runtime.Application
         {
             domain.Subtract(PowerupPrice);
             counter.Print(domain.Cookies);
+            domain.DoubleMultiplicator();
         }
     }
 }

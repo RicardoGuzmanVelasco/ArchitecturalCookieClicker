@@ -21,4 +21,9 @@ public class CookieBox
         Cookies -= cookiesToSubtract;
         if (Cookies == cookiesBefore) throw new ArgumentException("no se han restado las galletas");
     }
+
+    public void DoubleMultiplicator()
+    {
+        CookiesPerTime *= 2;
+    }
 }
