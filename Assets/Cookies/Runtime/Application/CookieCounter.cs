@@ -7,6 +7,6 @@
 
     public interface CookieMultiplier
     {
-        void Print(int howMuch);
+        void Print(int howMuch, int price);
     }
 }
