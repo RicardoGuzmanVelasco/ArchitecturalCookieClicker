@@ -7,5 +7,6 @@ public class PowerUp
     public void AddLevel()
     {
         Level++;
+        Price = 5 * Level;
     }
 }
