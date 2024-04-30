@@ -24,6 +24,7 @@ namespace Cookies.Runtime.Application
             counter.Print(domain.Cookies);
             domain.DoubleMultiplicator();
             multiplier.Print(domain.CookiesPerTime);
+            powerUpDomain.AddLevel();
         }
     }
 }
