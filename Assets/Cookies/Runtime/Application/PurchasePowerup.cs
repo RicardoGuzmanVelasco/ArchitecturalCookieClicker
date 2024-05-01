@@ -19,12 +19,17 @@ namespace Cookies.Runtime.Application
 
         public void Run()
         {
-            if (!domain.IsAffordable(powerUpDomain.Price)) return;
+            if (domain.IsAffordable(powerUpDomain.Price))
+                Purchase();
+        }
+
+        void Purchase()
+        {
             domain.Subtract(powerUpDomain.Price);
-            counter.Print(domain.Cookies);
-            domain.DoubleMultiplicator();
-            
             powerUpDomain.AddLevel();
+            domain.DoubleMultiplicator();
+
+            counter.Print(domain.Cookies);
             multiplier.Print(domain.CookiesPerTime, powerUpDomain.Price);
         }
     }
