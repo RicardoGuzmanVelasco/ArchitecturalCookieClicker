@@ -4,9 +4,4 @@
     {
         void Print(int howMany);
     }
-
-    public interface CookieMultiplier
-    {
-        void Print(int howMuch, int price);
-    }
 }
