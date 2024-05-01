@@ -1,13 +1,24 @@
 ﻿@startuml
 skin rose
+allow-mixing
+left to right direction
 
 boundary CookieButton
 boundary CookieCounter
+boundary PurchasePowerupButton
+boundary CookieMultiplier
 control EarnCookies
+control PurchasePowerup
 entity CookieBox
+entity Powerup
 
+PurchasePowerupButton --> PurchasePowerup
+PurchasePowerup -u-> CookieCounter
+PurchasePowerup --> CookieBox
+PurchasePowerup -u-> CookieMultiplier
+PurchasePowerup --> Powerup
 CookieButton --> EarnCookies
 EarnCookies --> CookieBox
-EarnCookies --> CookieCounter
+EarnCookies -u-> CookieCounter
 
 @enduml
