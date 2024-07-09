@@ -1,0 +1,23 @@
+﻿@startuml
+skin rose
+skinparam componentstyle uml1
+
+component Engine
+component LiveOpsModules
+collections Juegos
+collections Nuevos
+collections Legacy
+
+Nuevos -u-> Engine
+
+Nuevos -u-|> Juegos
+Legacy -u-|> Juegos
+
+collections "IS1 a IS4" as DesdeIS1HastaIS4
+DesdeIS1HastaIS4 "los que\nmás ingresan" -l-|> Legacy
+
+Juegos .u.> LiveOpsModules : van a usar\npoco a poco
+DesdeIS1HastaIS4 -u--> LiveOpsModules : ya usan
+
+Engine -> LiveOpsModules : dependencia que\nJose nos señala
+@enduml

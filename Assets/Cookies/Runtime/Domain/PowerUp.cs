@@ -6,6 +6,6 @@ public class PowerUp
 
     public void AddLevel()
     {
-        Level++;
+        Level = new();
     }
 }

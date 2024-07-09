@@ -8,7 +8,9 @@ public class PurchasePowerupButton : MonoBehaviour, CookieMultiplier
     CookieBox domain;
     PowerUp powerUpDomain;
     PurchasePowerup controller;
+    
     string initialTextString;
+    
     private void Awake()
     {
         initialTextString = GetComponentInChildren<TMP_Text>().text;

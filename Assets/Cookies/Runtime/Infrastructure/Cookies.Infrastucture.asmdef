@@ -4,7 +4,8 @@
     "references": [
         "Cookies.Application",
         "Unity.TextMeshPro",
-        "Cookies.Domain"
+        "Cookies.Domain",
+        "Zenject"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

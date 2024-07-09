@@ -3,7 +3,7 @@ namespace Cookies.Runtime.Application
 {
     public class EarnCookies
     {
-        readonly CookieBox domain = new CookieBox();
+        readonly CookieBox domain;
         readonly CookieCounter counter;
         
         public EarnCookies(CookieBox domain, CookieCounter counter)
