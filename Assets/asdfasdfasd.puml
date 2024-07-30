@@ -1,0 +1,36 @@
+﻿@startuml
+'https://plantuml.com/component-diagram
+skin rose
+left to right direction
+
+package Model{
+entity Cookie
+entity CookieBox
+entity Ratio
+entity Timer
+}
+
+package Presenters{
+control Autoearn
+control EarnCookies
+boundary CookieCounter
+
+}
+
+
+package View{
+boundary SDLCookieCounter
+
+}
+SDLCookieCounter --|> CookieCounter : hereda de
+CookieBox *--> Cookie : tiene
+CookieBox --> Ratio
+
+EarnCookies --> CookieBox
+
+EarnCookies -u-> CookieCounter
+
+Autoearn -> EarnCookies
+Autoearn --> Timer
+
+@enduml
