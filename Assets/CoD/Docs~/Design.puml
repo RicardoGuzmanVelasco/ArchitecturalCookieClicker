@@ -1,6 +1,23 @@
 ﻿@startuml
 skin rose
+allowmixing
+control ToggleWeapon
 
+boundary WeaponHUD
+boundary ToggleWeaponButton
 
+entity Weapon
+entity Magazine
+entity Equipment
+
+ToggleWeapon --> WeaponHUD
+ToggleWeapon --> Equipment
+ToggleWeapon ..> Weapon
+
+Equipment --> Weapon
+
+ToggleWeaponButton --> ToggleWeapon
+
+Weapon --> Magazine
 
 @enduml

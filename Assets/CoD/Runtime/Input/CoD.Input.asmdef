@@ -1,9 +1,11 @@
 {
-    "name": "CoD.Controller",
+    "name": "CoD.Input",
     "rootNamespace": "",
     "references": [
-        "CoD.Model",
-        "CoD.ViewAbstractions"
+        "GUID:1cdd79177832aeb449742b1723dc9b90",
+        "GUID:ce9e87a0c6136a349aa837d9df8eeae3",
+        "GUID:85c2d40af2a1159479b4ed8eff2ff138",
+        "GUID:94aac2b5ba824aceb353d8b5e0df25de"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,4 +1,26 @@
 ﻿@startuml
 skin rose
+skinparam componentstyle uml1
+
+component Model
+component Presentation
+component Input
+component Controller
+component ViewAbstractions
+
+component UnityEngine.dll <<thirdParty>> #lightgray
+
+Input --> Controller : 1
+Controller --> Model : 2
+Presentation --|> ViewAbstractions
+Controller --> ViewAbstractions : 3
+
+Presentation -u-> UnityEngine.dll
+Input -u-> UnityEngine.dll
+
+
+Input ..> ViewAbstractions #blue : guarrería
+Input ..> Model #blue : guarrería
+Input .> Presentation #blue : guarrería
 
 @enduml

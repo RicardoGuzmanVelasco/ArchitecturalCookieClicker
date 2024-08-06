@@ -1,8 +1,10 @@
 {
-    "name": "CoD.View",
+    "name": "CoD.Presentation",
     "rootNamespace": "",
     "references": [
-        "GUID:1cdd79177832aeb449742b1723dc9b90"
+        "CoD.Controller",
+        "Unity.TextMeshPro",
+        "CoD.ViewAbstractions"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
