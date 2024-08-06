@@ -4,13 +4,13 @@
     {
         public string Id { get; }
         public Magazine CurrentMagazine { get; }
-        int remainingMagazines;
-        
+        public int RemainingMagazines { get; }
+
         public Weapon(string id, int magazineCapacity, int magazineCount)
         {
             Id = id;
             CurrentMagazine = new Magazine(magazineCapacity);
-            remainingMagazines = magazineCount;
+            RemainingMagazines = magazineCount;
         }
         
     }

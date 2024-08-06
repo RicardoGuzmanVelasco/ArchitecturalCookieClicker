@@ -2,6 +2,7 @@
 {
     public interface WeaponHUD
     {
-        void Refresh(string id, int currentAmmo, int maxAmmo); //Los dos últimos es un magazine, pero no conozco modelo
+        //Los tres últimos es un magazine, pero no conozco modelo
+        void Refresh(string id, int currentAmmo, int maxAmmo, int remainingMagazines);
     }
 }

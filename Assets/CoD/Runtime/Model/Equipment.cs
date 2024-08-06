@@ -26,7 +26,7 @@ namespace CoD.Runtime.Model
         {
             return new Equipment(
                 new Weapon("ak47", 30, 3),
-                new Weapon("m1911", 7, 3)
+                new Weapon("m1911", 7, 5)
             );
         }
     }
