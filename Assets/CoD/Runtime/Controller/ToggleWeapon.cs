@@ -1,6 +1,6 @@
 ﻿using CoD.Runtime.Model;
 
-namespace CoD.Runtime.Controller
+namespace CoD.Runtime.ViewAbstractions
 {
     public class ToggleWeapon
     {
@@ -16,7 +16,10 @@ namespace CoD.Runtime.Controller
         public void Run()
         {
             model.Toggle();
-            view.Refresh(model.Current.Id);
+            
+            //puaj, qué verboso se nos queda, ¿verdad? Si tan solo la view recibiera el modelo... :(
+            var currentWeapon = model.Current;
+            view.Refresh(currentWeapon.Id, currentWeapon.CurrentMagazine.Ammo, currentWeapon.CurrentMagazine.Capacity);
         }
         
         public static ToggleWeapon Create(WeaponHUD view) => new ToggleWeapon(Equipment.Default(), view);

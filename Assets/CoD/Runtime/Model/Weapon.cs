@@ -3,13 +3,13 @@
     public class Weapon
     {
         public string Id { get; }
-        Magazine current;
+        public Magazine CurrentMagazine { get; }
         int remainingMagazines;
         
         public Weapon(string id, int magazineCapacity, int magazineCount)
         {
             Id = id;
-            current = new Magazine(magazineCapacity);
+            CurrentMagazine = new Magazine(magazineCapacity);
             remainingMagazines = magazineCount;
         }
         
