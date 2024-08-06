@@ -17,9 +17,16 @@ component ViewAbstractions #implementation
 }
 
 package ElFramework #application{
-component UnityEngine.dll <<thirdParty>> #lightgray
+component Main #application
 }
 
+component UnityEngine.dll <<thirdParty>> #lightgray
+
+Main --> Controller
+Main --> Model
+Main --> Presentation
+Main --> Input
+Main --> ViewAbstractions
 Input --> Controller : 1
 Controller --> Model : 2
 Presentation --|> ViewAbstractions
