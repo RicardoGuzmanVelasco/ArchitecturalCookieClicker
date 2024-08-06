@@ -1,8 +1,9 @@
-﻿using CoD.Runtime.View;
-using CoD.Runtime.ViewAbstractions;
+﻿using CoD.Runtime.Controller;
+using CoD.Runtime.Input;
+using CoD.Runtime.Presentation;
 using UnityEngine;
 
-namespace CoD.Runtime.Input
+namespace CoD.Runtime.Main
 {
     public class DependenciesInjection : MonoBehaviour
     {

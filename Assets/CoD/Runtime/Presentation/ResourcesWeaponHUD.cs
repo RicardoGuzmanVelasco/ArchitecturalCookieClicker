@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CoD.Runtime.View
+namespace CoD.Runtime.Presentation
 {
     public class ResourcesWeaponHUD : MonoBehaviour, WeaponHUD
     {

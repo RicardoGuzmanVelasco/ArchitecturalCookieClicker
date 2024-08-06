@@ -1,6 +1,7 @@
 ﻿using CoD.Runtime.Model;
+using CoD.Runtime.ViewAbstractions;
 
-namespace CoD.Runtime.ViewAbstractions
+namespace CoD.Runtime.Controller
 {
     public class ToggleWeapon
     {
