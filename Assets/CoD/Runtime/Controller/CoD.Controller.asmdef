@@ -1,0 +1,16 @@
+{
+    "name": "CoD.Controller",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ce9e87a0c6136a349aa837d9df8eeae3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
