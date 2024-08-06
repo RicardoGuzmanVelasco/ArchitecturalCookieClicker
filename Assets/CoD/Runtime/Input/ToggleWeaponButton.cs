@@ -1,19 +1,15 @@
-﻿using System;
-using CoD.Runtime.ViewAbstractions;
+﻿using CoD.Runtime.ViewAbstractions;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CoD.Runtime.View
+namespace CoD.Runtime.Input
 {
     public class ToggleWeaponButton : MonoBehaviour
     {
         ToggleWeapon controller;
 
-        void Awake()
+        void Start()
         {
-            //manera guarra. Por favor, arreglar.
-            Inject(ToggleWeapon.Create(FindObjectOfType<ResourcesWeaponHUD>()));
-
             controller.RunForTheFirstTime();
             GetComponent<Button>().onClick.AddListener(() => controller.Run());
         }
