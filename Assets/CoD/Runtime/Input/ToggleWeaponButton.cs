@@ -12,7 +12,7 @@ namespace CoD.Runtime.View
         void Awake()
         {
             //manera guarra. Por favor, arreglar.
-            controller = ToggleWeapon.Create(FindObjectOfType<TextMeshProWeaponHUD>());
+            controller = ToggleWeapon.Create(FindObjectOfType<ResourcesWeaponHUD>());
 
             controller.Run();
             controller.Run();
