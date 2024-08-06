@@ -14,8 +14,7 @@ namespace CoD.Runtime.View
             //manera guarra. Por favor, arreglar.
             controller = ToggleWeapon.Create(FindObjectOfType<ResourcesWeaponHUD>());
 
-            controller.Run();
-            controller.Run();
+            controller.RunForTheFirstTime();
             GetComponent<Button>().onClick.AddListener(() => controller.Run());
         }
     }

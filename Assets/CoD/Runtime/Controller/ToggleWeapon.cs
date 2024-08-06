@@ -13,6 +13,11 @@ namespace CoD.Runtime.ViewAbstractions
             this.view = view;
         }
 
+        public void RunForTheFirstTime()
+        {
+            view.Refresh(model.Current);
+        }
+        
         public void Run()
         {
             model.Toggle();
