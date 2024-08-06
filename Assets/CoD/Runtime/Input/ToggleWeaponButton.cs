@@ -10,6 +10,8 @@ namespace CoD.Runtime.Input
 
         void Start()
         {
+            Debug.Assert(controller is not null);
+            
             controller.RunForTheFirstTime();
             GetComponent<Button>().onClick.AddListener(() => controller.Run());
         }
