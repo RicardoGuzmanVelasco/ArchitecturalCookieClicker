@@ -2,13 +2,23 @@
 skin rose
 skinparam componentstyle uml1
 
+package LoMásAbstracto {
 component Model
+}
+
+package LoMenosAbstracto {
 component Presentation
 component Input
+}
+
+package LoIntermedio {
 component Controller
 component ViewAbstractions
+}
 
+package ElFramework{
 component UnityEngine.dll <<thirdParty>> #lightgray
+}
 
 Input --> Controller : 1
 Controller --> Model : 2
