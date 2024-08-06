@@ -4,8 +4,8 @@ namespace CoD.Runtime.ViewAbstractions
 {
     public class ToggleWeapon
     {
-        Equipment model;
-        WeaponHUD view;
+        readonly Equipment model;
+        readonly WeaponHUD view;
         
         public ToggleWeapon(Equipment model, WeaponHUD view)
         {
@@ -16,16 +16,7 @@ namespace CoD.Runtime.ViewAbstractions
         public void Run()
         {
             model.Toggle();
-            
-            //puaj, qué verboso se nos queda, ¿verdad? Si tan solo la view recibiera el modelo... :(
-            var currentWeapon = model.Current;
-            view.Refresh
-            (
-                currentWeapon.Id,
-                currentWeapon.CurrentMagazine.Ammo,
-                currentWeapon.CurrentMagazine.Capacity,
-                currentWeapon.RemainingMagazines
-            );
+            view.Refresh(model.Current);
         }
         
         public static ToggleWeapon Create(WeaponHUD view) => new ToggleWeapon(Equipment.Default(), view);

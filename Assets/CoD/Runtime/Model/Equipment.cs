@@ -4,8 +4,8 @@ namespace CoD.Runtime.Model
 {
     public class Equipment
     {
-        Weapon primary;
-        Weapon secondary;
+        readonly Weapon primary;
+        readonly Weapon secondary;
 
         bool primaryIsCurrent = true;
         

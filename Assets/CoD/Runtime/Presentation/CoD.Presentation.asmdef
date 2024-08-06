@@ -4,7 +4,8 @@
     "references": [
         "CoD.Controller",
         "Unity.TextMeshPro",
-        "CoD.ViewAbstractions"
+        "CoD.ViewAbstractions",
+        "CoD.Model"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
