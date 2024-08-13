@@ -21,9 +21,10 @@ namespace CoD.Runtime.Controller
             var weapon = model.Current;
             if (!weapon.CanShoot())
                 return;
-            
-            weapon.Shoot();
-            view.Refresh(weapon);
+            else {
+                weapon.Shoot();
+                view.Refresh(weapon);
+            }
         }
     }
 }
