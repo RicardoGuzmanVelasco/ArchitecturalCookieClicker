@@ -24,10 +24,5 @@ namespace CoD.Runtime.Controller
             model.Toggle();
             view.Refresh(model.Current);
         }
-        
-        public static ToggleWeapon Create(WeaponHUD view, Equipment model)
-        {
-            return new ToggleWeapon(model, view);
-        }
     }
 }
