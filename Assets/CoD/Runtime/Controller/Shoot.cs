@@ -19,8 +19,9 @@ namespace CoD.Runtime.Controller
         public void Run()
         {
             var weapon = model.Current;
+            
             if (!weapon.CanShoot())
-                return;
+                viewNoBullets.Show();
             else {
                 weapon.Shoot();
                 view.Refresh(weapon);
