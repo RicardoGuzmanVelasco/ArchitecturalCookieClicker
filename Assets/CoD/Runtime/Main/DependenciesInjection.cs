@@ -14,8 +14,12 @@ namespace CoD.Runtime.Main
             var model = Equipment.Default();
             var controller = ToggleWeapon.Create(weaponHud, model);
             
-            var input = FindObjectOfType<ToggleWeaponButton>();
-            input.Inject(controller);
+            var toggleWeaponInput = FindObjectOfType<ToggleWeaponButton>();
+            toggleWeaponInput.Inject(controller);
+            
+            var shootInput = FindObjectOfType<ShootWhenPressLetterQ>();
+            var shootController = new Shoot(model, weaponHud);
+            shootInput.Inject(shootController);
         }
     }
 }
