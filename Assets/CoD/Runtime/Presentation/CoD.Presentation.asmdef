@@ -5,7 +5,8 @@
         "CoD.Controller",
         "Unity.TextMeshPro",
         "CoD.ViewAbstractions",
-        "CoD.Model"
+        "CoD.Model",
+        "DOTween.Modules"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
