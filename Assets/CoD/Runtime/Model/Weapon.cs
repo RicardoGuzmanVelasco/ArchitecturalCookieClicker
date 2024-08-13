@@ -13,5 +13,9 @@
             RemainingMagazines = magazineCount;
         }
         
+        public bool CanShoot()
+        {
+            return CurrentMagazine.HasAmmo();
+        }
     }
 }

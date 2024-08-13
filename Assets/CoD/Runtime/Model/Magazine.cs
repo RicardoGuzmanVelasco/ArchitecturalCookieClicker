@@ -10,6 +10,11 @@
             Capacity = capacity;
             Ammo = capacity;
         }
+        
+        public bool HasAmmo()
+        {
+            return Ammo > 0;
+        }
 
         public void Shoot()
         {
