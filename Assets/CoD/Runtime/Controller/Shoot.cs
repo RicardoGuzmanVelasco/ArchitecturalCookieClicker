@@ -22,10 +22,14 @@ namespace CoD.Runtime.Controller
             
             if (!weapon.CanShoot())
                 viewNoBullets.Show();
-            else {
-                weapon.Shoot();
-                view.Refresh(weapon);
-            }
+            else
+                RunOneShoot(weapon);
+        }
+
+        void RunOneShoot(Weapon weapon)
+        {
+            weapon.Shoot();
+            view.Refresh(weapon);
         }
     }
 }
