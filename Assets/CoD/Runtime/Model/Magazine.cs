@@ -1,4 +1,6 @@
-﻿namespace CoD.Runtime.Model
+﻿using UnityEngine;
+
+namespace CoD.Runtime.Model
 {
     public class Magazine
     {
@@ -18,6 +20,7 @@
 
         public void Shoot()
         {
+            Debug.Assert(HasAmmo());
             Ammo--;
         }
     }

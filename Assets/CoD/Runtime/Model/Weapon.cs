@@ -1,4 +1,6 @@
-﻿namespace CoD.Runtime.Model
+﻿using UnityEngine;
+
+namespace CoD.Runtime.Model
 {
     public class Weapon
     {
@@ -16,6 +18,12 @@
         public bool CanShoot()
         {
             return CurrentMagazine.HasAmmo();
+        }
+
+        public void Shoot()
+        {
+            Debug.Assert(CanShoot());
+            CurrentMagazine.Shoot();
         }
     }
 }
