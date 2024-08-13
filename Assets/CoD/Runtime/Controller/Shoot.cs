@@ -5,8 +5,8 @@ namespace CoD.Runtime.Controller
 {
     public class Shoot
     {
-        Equipment model;
-        WeaponHUD view;
+        readonly Equipment model;
+        readonly WeaponHUD view;
         
         public Shoot(Equipment model, WeaponHUD view)
         {
