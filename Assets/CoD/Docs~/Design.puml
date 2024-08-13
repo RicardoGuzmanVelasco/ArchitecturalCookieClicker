@@ -1,16 +1,28 @@
 ﻿@startuml
 skin rose
-allowmixing
+left to right direction
+
 control ToggleWeapon
+control Shoot
 
 boundary WeaponHUD
 boundary ToggleWeaponButton
+boundary ShootButton
 
 entity Weapon
 entity Magazine
 entity Equipment
 
-ToggleWeapon --> WeaponHUD
+entity Bullet
+
+ShootButton --> Shoot
+
+Shoot --> Equipment
+Shoot --> Bullet
+Shoot ..> Weapon
+Shoot -u-> WeaponHUD
+
+ToggleWeapon -u-> WeaponHUD
 ToggleWeapon --> Equipment
 ToggleWeapon ..> Weapon
 

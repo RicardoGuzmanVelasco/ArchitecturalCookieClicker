@@ -25,6 +25,9 @@ namespace CoD.Runtime.Controller
             view.Refresh(model.Current);
         }
         
-        public static ToggleWeapon Create(WeaponHUD view) => new ToggleWeapon(Equipment.Default(), view);
+        public static ToggleWeapon Create(WeaponHUD view, Equipment model)
+        {
+            return new ToggleWeapon(model, view);
+        }
     }
 }

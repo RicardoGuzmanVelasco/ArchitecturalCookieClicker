@@ -29,8 +29,8 @@ Presentation -u-> UnityEngine.dll
 Input -u-> UnityEngine.dll
 
 
-Input ..> ViewAbstractions #blue : guarrería
-Input ..> Model #blue : guarrería
-Input .> Presentation #blue : guarrería
+Input ..> ViewAbstractions #blue
+Input ..> Model #blue
+Input .> Presentation #blue
 
 @enduml
