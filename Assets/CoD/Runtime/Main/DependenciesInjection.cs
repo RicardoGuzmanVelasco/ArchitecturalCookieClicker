@@ -19,7 +19,7 @@ namespace CoD.Runtime.Main
             toggleWeaponInput.Inject(controller);
             
             var shootInput = FindObjectOfType<ShootWhenPressLetterQ>();
-            var shootController = new Shoot(model, weaponHud);
+            var shootController = new Shoot(model, weaponHud, FindObjectOfType<NoBulletsVisualEffect>());
             shootInput.Inject(shootController);
         }
     }

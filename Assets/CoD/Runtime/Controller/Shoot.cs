@@ -7,11 +7,13 @@ namespace CoD.Runtime.Controller
     {
         readonly Equipment model;
         readonly WeaponHUD view;
+        readonly NoBulletsFeedback viewNoBullets;
         
-        public Shoot(Equipment model, WeaponHUD view)
+        public Shoot(Equipment model, WeaponHUD view, NoBulletsFeedback viewNoBullets)
         {
             this.model = model;
             this.view = view;
+            this.viewNoBullets = viewNoBullets;
         }
 
         public void Run()
