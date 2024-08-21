@@ -1,13 +1,20 @@
-﻿using CoD.Runtime.Controller;
+﻿using System;
+using CoD.Runtime.Controller;
 using CoD.Runtime.ViewAbstractions;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace CoD.Runtime.Input
 {
     public class ToggleWeaponButton : MonoBehaviour
     {
-        ToggleWeapon controller;
+        [Inject] ToggleWeapon controller;
+
+        void Awake()
+        {
+            controller.Run();
+        }
 
         void Start()
         {
@@ -15,11 +22,6 @@ namespace CoD.Runtime.Input
             
             controller.RunForTheFirstTime();
             GetComponent<Button>().onClick.AddListener(() => controller.Run());
-        }
-
-        public void Inject(ToggleWeapon controllerToInject)
-        {
-            controller = controllerToInject;
         }
     }
 }
