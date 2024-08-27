@@ -17,6 +17,6 @@ public class UntitledInstaller : MonoInstaller
         Container.Bind<Reload>().FromNew().AsSingle();
         
         Container.Bind<Equipment>().FromInstance(Equipment.Default()).AsSingle();
-        Container.Bind<Weapon>().To<DummyWeapon>().AsSingle();
+        Container.Bind<Weapon>().To<CurrentWeapon>().AsSingle();
     }
 }

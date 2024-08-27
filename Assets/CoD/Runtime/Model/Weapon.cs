@@ -4,9 +4,9 @@ namespace CoD.Runtime.Model
 {
     public class Weapon
     {
-        public string Id { get; }
-        public Magazine CurrentMagazine { get; }
-        public int RemainingMagazines { get; private set; }
+        public virtual string Id { get; }
+        public virtual Magazine CurrentMagazine { get; }
+        public virtual int RemainingMagazines { get; private set; }
 
         public Weapon(string id, int magazineCapacity, int magazineCount)
         {
@@ -15,35 +15,35 @@ namespace CoD.Runtime.Model
             RemainingMagazines = magazineCount;
         }
         
-        public bool CanShoot()
+        public virtual bool CanShoot()
         {
             return CurrentMagazine.HasAmmo();
         }
 
-        public bool CanReload()
+        public virtual bool CanReload()
         {
             return CanShoot() && !IsFull();
         }
 
-        public void Shoot()
+        public virtual void Shoot()
         {
             Debug.Assert(CanShoot());
             CurrentMagazine.Shoot();
         }
 
-        public bool IsFull()
+        public virtual bool IsFull()
         {
             return CurrentMagazine.IsFull();
         }
         
-        public void Reload()
+        public virtual void Reload()
         {
             CurrentMagazine.Refill();
             RemainingMagazines--;
             Debug.Assert(RemainingMagazines >= 0);
         }
 
-        public bool HasMagazines()
+        public virtual bool HasMagazines()
         {
             return RemainingMagazines > 0;
         }

@@ -5,20 +5,18 @@ namespace CoD.Runtime.Controller
 {
     public class Reload
     {
-        readonly Equipment model;
         readonly Weapon currentWeapon;
         readonly WeaponHUD view;
         
-        public Reload(Equipment model, Weapon currentWeapon, WeaponHUD view)
+        public Reload(Weapon currentWeapon, WeaponHUD view)
         {
-            this.model = model;
             this.view = view;
             this.currentWeapon = currentWeapon;
         }
 
         public void Run()
         {
-            if (model.Current.CanReload())
+            if (currentWeapon.CanReload())
                 RunOnce();
             else
                 ShowFeedback();
@@ -26,16 +24,16 @@ namespace CoD.Runtime.Controller
 
         void ShowFeedback()
         {
-            if (model.Current.IsFull())
+            if (currentWeapon.IsFull())
                 view.WarnFull();
-            else if (!model.Current.HasMagazines())
+            else if (!currentWeapon.HasMagazines())
                 view.WarnEmpty();
         }
 
         void RunOnce()
         {
-            model.Current.Reload();
-            view.Refresh(model.Current);
+            currentWeapon.Reload();
+            view.Refresh(currentWeapon);
         }
     }
 }
