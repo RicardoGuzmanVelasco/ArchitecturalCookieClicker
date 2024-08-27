@@ -16,15 +16,24 @@ namespace CoD.Runtime.Controller
 
         public void Run()
         {
-            if (model.Current.IsFull())
+            if (WeaponHasAllBullets())
                 view.WarnFull();
-            else if (!model.Current.HasMagazines())
+            else if (WeaponHasNoMagazines())
                 view.WarnEmpty();
             else
-            {
-                model.Current.Reload();
-                view.Refresh(model.Current);
-            }
+                RunOnce();
+        }
+
+        bool WeaponHasNoMagazines()
+            => !model.Current.HasMagazines();
+
+        bool WeaponHasAllBullets()
+            => model.Current.IsFull();
+
+        void RunOnce()
+        {
+            model.Current.Reload();
+            view.Refresh(model.Current);
         }
     }
 }
