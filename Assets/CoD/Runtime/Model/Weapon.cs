@@ -15,19 +15,19 @@ namespace CoD.Runtime.Model
             RemainingMagazines = magazineCount;
         }
         
-        public virtual bool CanShoot()
+        public virtual bool HasBullets()
         {
             return CurrentMagazine.HasAmmo();
         }
 
         public virtual bool CanReload()
         {
-            return CanShoot() && !IsFull();
+            return HasMagazines() && !IsFull();
         }
 
         public virtual void Shoot()
         {
-            Debug.Assert(CanShoot());
+            Debug.Assert(HasBullets());
             CurrentMagazine.Shoot();
         }
 

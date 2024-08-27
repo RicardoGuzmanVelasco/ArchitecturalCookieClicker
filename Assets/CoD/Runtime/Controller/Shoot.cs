@@ -6,20 +6,24 @@ namespace CoD.Runtime.Controller
     public class Shoot
     {
         readonly Equipment model;
+        readonly Reload delegatedController;
         readonly WeaponHUD view;
         
-        public Shoot(Equipment model, WeaponHUD view)
+        public Shoot(Equipment model, Reload delegatedController, WeaponHUD view)
         {
-            this.model = model;
             this.view = view;
+            this.delegatedController = delegatedController;
+            this.model = model;
         }
 
         public void Run()
         {
             var weapon = model.Current;
 
-            if (weapon.CanShoot())
+            if (weapon.HasBullets())
                 RunOneShoot(weapon);
+            else
+                delegatedController.Run();
         }
 
         void RunOneShoot(Weapon weapon)

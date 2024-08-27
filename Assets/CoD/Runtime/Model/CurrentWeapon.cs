@@ -16,9 +16,9 @@ namespace CoD.Runtime.Model
             this.equipment = equipment;
         }
 
-        public override bool CanShoot()
+        public override bool HasBullets()
         {
-            return equipment.Current.CanShoot();
+            return equipment.Current.HasBullets();
         }
 
         public override bool CanReload()
