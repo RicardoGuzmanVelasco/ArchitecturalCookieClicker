@@ -17,18 +17,14 @@ namespace CoD.Runtime.Controller
         public void Run()
         {
             if (model.Current.IsFull())
-            {
                 view.WarnFull();
-                return;
-            }
-
-            if (!model.Current.HasMagazines())
-            {
+            else if (!model.Current.HasMagazines())
                 view.WarnEmpty();
-                return;
+            else
+            {
+                model.Current.Reload();
+                view.Refresh(model.Current);
             }
-            model.Current.Reload();
-            view.Refresh(model.Current);
         }
     }
 }
