@@ -24,5 +24,13 @@ namespace CoD.Runtime.Presentation
             await Task.Delay(500);
             GetComponentsInChildren<TMP_Text>().First().text = textBefore;
         }
+        
+        public async void WarnEmpty()
+        {
+            var textBefore = GetComponentsInChildren<TMP_Text>().First().text;
+            GetComponentsInChildren<TMP_Text>().First().text = "EMPTY";
+            await Task.Delay(500);
+            GetComponentsInChildren<TMP_Text>().First().text = textBefore;
+        }
     }
 }

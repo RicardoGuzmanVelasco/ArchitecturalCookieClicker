@@ -21,7 +21,12 @@ namespace CoD.Runtime.Controller
                 view.WarnFull();
                 return;
             }
-            
+
+            if (!model.Current.HasMagazines())
+            {
+                view.WarnEmpty();
+                return;
+            }
             model.Current.Reload();
             view.Refresh(model.Current);
         }

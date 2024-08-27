@@ -6,5 +6,6 @@ namespace CoD.Runtime.ViewAbstractions
     {
         void Refresh(Weapon equippedWeapon);
         void WarnFull();
+        void WarnEmpty();
     }
 }
