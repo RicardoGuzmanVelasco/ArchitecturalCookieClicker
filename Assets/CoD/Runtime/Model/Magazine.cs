@@ -23,5 +23,10 @@ namespace CoD.Runtime.Model
             Debug.Assert(HasAmmo());
             Ammo--;
         }
+
+        public void Refill()
+        {
+            Ammo = Capacity;
+        }
     }
 }

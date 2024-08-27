@@ -1,0 +1,9 @@
+﻿@startuml
+skin rose
+
+class Two
+interface ToggleWeaponButton
+
+Two <-u- ToggleWeaponButton
+
+@enduml

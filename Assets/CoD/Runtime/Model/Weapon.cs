@@ -6,7 +6,7 @@ namespace CoD.Runtime.Model
     {
         public string Id { get; }
         public Magazine CurrentMagazine { get; }
-        public int RemainingMagazines { get; }
+        public int RemainingMagazines { get; private set; }
 
         public Weapon(string id, int magazineCapacity, int magazineCount)
         {
@@ -24,6 +24,13 @@ namespace CoD.Runtime.Model
         {
             Debug.Assert(CanShoot());
             CurrentMagazine.Shoot();
+        }
+
+        public void Reload()
+        {
+            CurrentMagazine.Refill();
+            RemainingMagazines--;
+            Debug.Assert(RemainingMagazines >= 0);
         }
     }
 }

@@ -4,10 +4,12 @@ left to right direction
 
 control ToggleWeapon
 control Shoot
+control Reload
 
 boundary WeaponHUD
 boundary ToggleWeaponButton
 boundary ShootButton
+boundary ReloadButton
 
 entity Weapon
 entity Magazine
@@ -25,6 +27,10 @@ Shoot -u-> WeaponHUD
 ToggleWeapon -u-> WeaponHUD
 ToggleWeapon --> Equipment
 ToggleWeapon ..> Weapon
+
+Reload --> Equipment
+Reload -u-> WeaponHUD
+ReloadButton --> Reload
 
 Equipment --> Weapon
 
