@@ -28,10 +28,11 @@ ToggleWeapon -u-> WeaponHUD
 ToggleWeapon --> Equipment
 ToggleWeapon ..> Weapon
 
-Reload --> Equipment
 Reload -u-> WeaponHUD
 ReloadButton --> Reload
-Reload ..> Weapon
+Reload --> Weapon
+
+Shoot -> Reload
 
 Equipment --> Weapon
 

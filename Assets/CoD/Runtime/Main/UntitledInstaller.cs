@@ -10,7 +10,6 @@ public class UntitledInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Container.Bind<WeaponHUD>().To<ResourcesWeaponHUD>().FromComponentsInHierarchy().AsSingle();
-        Container.Bind<NoBulletsFeedback>().To<NoBulletsVisualEffect>().FromComponentsInHierarchy().AsSingle();
         
         Container.Bind<Shoot>().FromNew().AsSingle();
         Container.Bind<ToggleWeapon>().FromNew().AsSingle();

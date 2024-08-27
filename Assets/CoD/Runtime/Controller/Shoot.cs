@@ -7,22 +7,18 @@ namespace CoD.Runtime.Controller
     {
         readonly Equipment model;
         readonly WeaponHUD view;
-        readonly NoBulletsFeedback viewNoBullets;
         
-        public Shoot(Equipment model, WeaponHUD view, NoBulletsFeedback viewNoBullets)
+        public Shoot(Equipment model, WeaponHUD view)
         {
             this.model = model;
             this.view = view;
-            this.viewNoBullets = viewNoBullets;
         }
 
         public void Run()
         {
             var weapon = model.Current;
-            
-            if (!weapon.CanShoot())
-                viewNoBullets.Show();
-            else
+
+            if (weapon.CanShoot())
                 RunOneShoot(weapon);
         }
 
