@@ -6,12 +6,14 @@ namespace CoD.Runtime.Controller
     public class Reload
     {
         readonly Equipment model;
+        readonly Weapon currentWeapon;
         readonly WeaponHUD view;
         
-        public Reload(Equipment model, WeaponHUD view)
+        public Reload(Equipment model, Weapon currentWeapon, WeaponHUD view)
         {
             this.model = model;
             this.view = view;
+            this.currentWeapon = currentWeapon;
         }
 
         public void Run()
