@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using CoD.Runtime.Model;
 using CoD.Runtime.ViewAbstractions;
 using TMPro;
@@ -14,6 +15,14 @@ namespace CoD.Runtime.Presentation
             GetComponent<Image>().sprite = Resources.Load<Sprite>($"{equippedWeapon.Id}");
             GetComponentsInChildren<TMP_Text>().First().text = $"{equippedWeapon.CurrentMagazine.Ammo}/{equippedWeapon.CurrentMagazine.Capacity}";
             GetComponentsInChildren<TMP_Text>().Last().text = $"x{equippedWeapon.RemainingMagazines}";
+        }
+
+        public async void WarnFull()
+        {
+            var textBefore = GetComponentsInChildren<TMP_Text>().First().text;
+            GetComponentsInChildren<TMP_Text>().First().text = "FULL";
+            await Task.Delay(500);
+            GetComponentsInChildren<TMP_Text>().First().text = textBefore;
         }
     }
 }

@@ -26,11 +26,21 @@ namespace CoD.Runtime.Model
             CurrentMagazine.Shoot();
         }
 
+        public bool IsFull()
+        {
+            return CurrentMagazine.IsFull();
+        }
+        
         public void Reload()
         {
             CurrentMagazine.Refill();
             RemainingMagazines--;
             Debug.Assert(RemainingMagazines >= 0);
+        }
+
+        public bool HasMagazines()
+        {
+            return RemainingMagazines > 0;
         }
     }
 }

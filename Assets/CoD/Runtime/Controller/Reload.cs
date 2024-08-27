@@ -16,6 +16,12 @@ namespace CoD.Runtime.Controller
 
         public void Run()
         {
+            if (model.Current.IsFull())
+            {
+                view.WarnFull();
+                return;
+            }
+            
             model.Current.Reload();
             view.Refresh(model.Current);
         }

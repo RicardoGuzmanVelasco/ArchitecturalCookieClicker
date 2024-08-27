@@ -28,5 +28,10 @@ namespace CoD.Runtime.Model
         {
             Ammo = Capacity;
         }
+
+        public bool IsFull()
+        {
+            return Ammo == Capacity;
+        }
     }
 }
