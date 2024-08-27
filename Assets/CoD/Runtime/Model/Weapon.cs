@@ -20,6 +20,11 @@ namespace CoD.Runtime.Model
             return CurrentMagazine.HasAmmo();
         }
 
+        public bool CanReload()
+        {
+            return CanShoot() && !IsFull();
+        }
+
         public void Shoot()
         {
             Debug.Assert(CanShoot());

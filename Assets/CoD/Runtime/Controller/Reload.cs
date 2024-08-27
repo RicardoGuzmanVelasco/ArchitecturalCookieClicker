@@ -16,19 +16,19 @@ namespace CoD.Runtime.Controller
 
         public void Run()
         {
-            if (WeaponHasAllBullets())
-                view.WarnFull();
-            else if (WeaponHasNoMagazines())
-                view.WarnEmpty();
-            else
+            if (model.Current.CanReload())
                 RunOnce();
+            else
+                ShowFeedback();
         }
 
-        bool WeaponHasNoMagazines()
-            => !model.Current.HasMagazines();
-
-        bool WeaponHasAllBullets()
-            => model.Current.IsFull();
+        void ShowFeedback()
+        {
+            if (model.Current.IsFull())
+                view.WarnFull();
+            else if (!model.Current.HasMagazines())
+                view.WarnEmpty();
+        }
 
         void RunOnce()
         {
