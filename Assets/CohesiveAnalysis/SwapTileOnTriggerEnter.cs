@@ -1,55 +1,61 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 namespace CohesiveAnalysis
 {
     public class SwapTileOnTriggerEnter : MonoBehaviour
     {
-        [SerializeField]
-        private Tilemap tilemap;
-        [SerializeField]
-        private TileBase defaultTile;
-        [SerializeField]
-        private TileBase swapTile;
-
-        private Vector3Int previousTilePosition;
-
-        private Vector3 playerWorldPos;
-        private Vector3Int playerTilePos;
+        [SerializeField] Tilemap tilemap;
         
-        private void Awake()
+        ToggleTile toggle;
+        readonly Movement playerMovement = new();
+
+        void OnTriggerStay2D(Collider2D collision)
         {
-            if (tilemap == null)
+            askldjfkl(collision);
+            if (playerMovement.HasMoved)
+                SwapTiles();
+        }
+
+        void askldjfkl(Collider2D collision)
+        {
+            playerMovement.Update(PlayerTilePos(collision.transform.position));
+        }
+
+        Vector3Int PlayerTilePos(Vector3 transformPosition)
+        {
+            return tilemap.WorldToCell(transformPosition);
+        }
+
+        void SwapTiles()
+        {
+            RevertirElTileAnterior();
+            CambiarElTileActual();
+        }
+
+        void CambiarElTileActual()
+        {
+            if (toggle.IsDefault(CurrentTile()))
             {
-                tilemap = GetComponent<Tilemap>();
+                SwapToAlt();
             }
         }
-        private void OnTriggerStay2D(Collider2D collision)
+
+        void SwapToAlt()
         {
-            if (tilemap == null) return;
+            tilemap.SetTile(playerMovement.Destiny, toggle.AltTile);
+        }
 
-            playerWorldPos = collision.transform.position;
+        TileBase CurrentTile()
+        {
+            return tilemap.GetTile(playerMovement.Destiny);
+        }
 
-            playerTilePos = tilemap.WorldToCell(playerWorldPos);
-
-            if (playerTilePos != previousTilePosition)
-            {
-                // Revertir el tile anterior
-                if (tilemap.GetTile(previousTilePosition) == swapTile)
-                {
-                    tilemap.SetTile(previousTilePosition, defaultTile);
-                }
-
-                // Cambiar el tile actual
-                TileBase currentTile = tilemap.GetTile(playerTilePos);
-                if (currentTile == defaultTile)
-                {
-                    tilemap.SetTile(playerTilePos, swapTile);
-                }
-
-                // Actualizar la posici�n del tile anterior
-                previousTilePosition = playerTilePos;
-            }
+        void RevertirElTileAnterior()
+        {
+            tilemap.SetTile(playerMovement.Origin, toggle.DefaultTile);
         }
     }
 }
