@@ -32,5 +32,25 @@ namespace CoD.Runtime.Presentation
             await Task.Delay(500);
             GetComponentsInChildren<TMP_Text>().First().text = textBefore;
         }
+
+        public void Warn(bool whetherIsFullOrEmpty)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Show()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Hide()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ToggleVisibility(bool visible)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
