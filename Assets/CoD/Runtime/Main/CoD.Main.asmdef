@@ -4,17 +4,17 @@
     "references": [
         "GUID:6b678eb9a17e4ab4b1bfcf88c90d0fcb",
         "GUID:85c2d40af2a1159479b4ed8eff2ff138",
-        "GUID:1cdd79177832aeb449742b1723dc9b90",
-        "GUID:94aac2b5ba824aceb353d8b5e0df25de",
-        "GUID:ce9e87a0c6136a349aa837d9df8eeae3",
-        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:0c5714fa41ec4ef7a239e5c8b7249a8f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": true,
+    "overrideReferences": false,
     "precompiledReferences": [
-        "Zenject-usage.dll"
+        "Zenject-usage.dll",
+        "Controller.dll",
+        "Model.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
