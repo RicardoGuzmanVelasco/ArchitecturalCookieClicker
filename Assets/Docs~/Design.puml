@@ -1,6 +1,6 @@
 ﻿@startuml
 skin rose
-allow-mixing
+
 left to right direction
 
 boundary CookieButton
