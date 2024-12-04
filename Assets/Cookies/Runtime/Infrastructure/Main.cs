@@ -1,4 +1,5 @@
 using Cookies.Runtime.Application;
+using Cookies.Runtime.Infrastructure;
 using UnityEngine;
 
 public class Main : MonoBehaviour
@@ -13,5 +14,7 @@ public class Main : MonoBehaviour
         PurchasePowerup purchasePowerup = new PurchasePowerup(cookieBox, powerUp, counter, multiplier);
         FindAnyObjectByType<CookieButton>().Inject(earnCookies);
         FindAnyObjectByType<PurchasePowerupButton>().Inject(purchasePowerup, cookieBox, powerUp);
+
+        FindObjectOfType<TimePassage>().Inject(earnCookies);
     }
 }

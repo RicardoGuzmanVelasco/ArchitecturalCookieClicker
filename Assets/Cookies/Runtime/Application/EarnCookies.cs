@@ -12,6 +12,13 @@ namespace Cookies.Runtime.Application
             this.counter = counter ?? throw new ArgumentNullException(nameof(counter));
         }
 
+        public void Run(int howManyTimes)
+        {
+            for (var i = 0; i < howManyTimes; i++)
+            {
+                Run();
+            }
+        }
         public void Run()
         {
             domain.Add(domain.CookiesPerTime);

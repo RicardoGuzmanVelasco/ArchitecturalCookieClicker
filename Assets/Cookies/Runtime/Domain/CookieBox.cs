@@ -1,19 +1,26 @@
 ﻿using System;
+
 public class CookieBox
 {
+    public TimeSpan AutoearnRatio { get; private set; } = TimeSpan.FromSeconds(1);
     public int CookiesPerTime { get; private set; } = 1;
-    public int Cookies { get; private set; }
+    public int Cookies => cookies.Current;
+
+    Container cookies;
+
+    public CookieBox()
+    {
+        this.cookies = new Container(20);
+    }
 
     public void Add(int cookiesToAdd)
     {
-        if (cookiesToAdd <= 0) throw new ArgumentOutOfRangeException(nameof(cookiesToAdd));
-        Cookies += cookiesToAdd;
+        cookies.Add(cookiesToAdd);
     }
 
     public void Subtract(int cookiesToSubtract)
     {
-        if (Cookies < cookiesToSubtract) throw new InvalidOperationException("No te puedes endeudar de galletas");
-        Cookies -= cookiesToSubtract;
+        cookies.Subtract(cookiesToSubtract);
     }
 
     public void DoubleMultiplicator()
