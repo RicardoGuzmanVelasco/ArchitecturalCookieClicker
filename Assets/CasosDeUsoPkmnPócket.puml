@@ -1,0 +1,27 @@
+﻿@startuml
+skin rose
+left to right direction
+
+usecase AbrirSobre
+usecase AñadirAmigo
+usecase VerCarta
+usecase ElegirEcciónMágica
+usecase CrearGalería
+usecase CrearBaraja
+
+package Partidas{
+    usecase RetarConContraseña
+    usecase CombatirEnVersus
+    usecase CombatirRetoIndividual
+    
+    package Combate{
+        usecase JugarTurno
+        usecase UsarCarta
+        usecase RetirarCartaActiva
+        usecase UsarHabilidad
+        usecase Atacar
+        usecase ActivarCombateAutomático
+    }
+}
+
+@enduml
