@@ -1,0 +1,23 @@
+@startuml
+skin rose
+skinparam componentstyle uml1
+
+component Application
+component Infrastructure{
+    rectangle PanelA
+    rectangle PanelB
+    rectangle PanelC
+    rectangle PanelD
+}
+component Main
+
+Application --( Panel
+
+PanelA --|> Panel
+PanelB --|> Panel
+
+Main --> PanelA
+Main --> PanelB
+Main --> PanelC
+
+@enduml

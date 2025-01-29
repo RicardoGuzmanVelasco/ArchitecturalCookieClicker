@@ -1,0 +1,15 @@
+@startuml
+skin rose
+skinparam componentstyle uml1
+
+component Glove{
+component GloveDisplay
+component GlovePhysical
+}
+
+component World2d <<vertical>>
+component UI #lightgray
+
+GloveDisplay --> Mierda2
+GloveDisplay --> GlovePhysical
+@enduml

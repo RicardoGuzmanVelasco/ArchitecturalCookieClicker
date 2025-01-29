@@ -1,0 +1,46 @@
+﻿@startuml
+skin rose
+skinparam componentstyle uml1
+
+folder Assets
+folder Editor
+folder Plugins
+folder PluginsEditor
+
+node Build{
+component AssemblyCSharp.dll
+component AssemblyCSharpFirstPass.dll
+component UnityEngine.dll
+
+component NuestrosTestDeEscena.dll
+}
+
+node Editor{
+component AssemblyCSharpEditor.dll
+component AssemblyCSharpEditorFirstPass.dll
+component NuestrosTestDeEditor.dll
+component UnityEditor.dll
+}
+
+package UnityTestRunner{
+    component EditMode
+    component PlayMode
+}
+
+
+Assets ..> AssemblyCSharp.dll : builds
+Editor ..> AssemblyCSharpEditor.dll : builds
+
+Plugins ..> AssemblyCSharpFirstPass.dll : builds
+PluginsEditor ..> AssemblyCSharpEditorFirstPass.dll : builds
+
+AssemblyCSharp.dll --> UnityEngine.dll
+AssemblyCSharpFirstPass.dll --> UnityEngine.dll
+
+AssemblyCSharpEditor.dll --> UnityEditor.dll
+AssemblyCSharpEditorFirstPass.dll --> UnityEditor.dll
+
+PlayMode ..> Build
+EditMode ..> Editor
+
+@enduml
