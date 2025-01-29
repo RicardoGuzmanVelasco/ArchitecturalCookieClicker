@@ -7,9 +7,10 @@
     
     public class DummyCookieCounter : CookieCounter
     {
+        public int LastCall { get; private set; }
         public void Print(int howMany)
         {
-            // Do nothing
+            LastCall = howMany;
         }
     }
 }
