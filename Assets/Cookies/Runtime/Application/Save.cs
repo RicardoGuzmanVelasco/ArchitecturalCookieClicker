@@ -15,6 +15,6 @@ public sealed class Save
     }
     public void Run()
     {
-        repo.Commit(cookieBox.Cookies, powerUp.Level);
+        repo.Commit(cookieBox.Cookies);
     }
 }
