@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Cookies.Runtime.Application;
+using NUnit.Framework;
 
 public class EarnCookiesTests
 {
@@ -6,9 +7,9 @@ public class EarnCookiesTests
     public void Cookies_AreAddedToTheBox()
     {
         var box = new CookieBox();
-        // var sut = new EarnCookies(box, new DummyCookieCounter());
+        var sut = new EarnCookies(box, new DummyCookieCounter());
 
-        // sut.Run();
+        sut.Run();
         
         Assert.AreEqual(box.CookiesPerTime, box.Cookies);
     }
