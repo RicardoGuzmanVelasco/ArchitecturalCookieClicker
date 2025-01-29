@@ -8,9 +8,11 @@ public class CookieBox
 
     Container cookies;
 
-    public CookieBox()
+    public CookieBox() : this(20) { }
+    
+    public CookieBox(int capacity)
     {
-        this.cookies = new Container(20);
+        this.cookies = new Container(capacity);
     }
 
     public void Add(int cookiesToAdd)
